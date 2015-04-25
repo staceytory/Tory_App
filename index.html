@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Werkner</title>
+		<style type="text/css">
+
+
+
+
+			body {
+				background-color: #c7dfd8; color: #fff;
+
+
+			}
+
+			#tabbed {
+				background-color: ;
+				
+									
+				width: 960px;
+				padding: 10px;
+				margin: auto;
+			}
+
+			#tabbed nav {
+				margin: auto;
+				padding-left: 250px;
+			}
+			#tabbed nav a {
+				display: inline-block;
+				background-color: #9fb2ac;
+				width: 150px;
+				height: 50px;
+				
+				text-align: center;
+				line-height: 50px;
+
+				text-decoration: none;
+				text-transform: uppercase;
+
+				color: #eee;
+
+				font-family: Helvetica, Arial;
+				border-radius: 10px 10px 0px 0px;
+				/*border-radius: 10px 10px 0px 0px; */
+				/*
+				 Top left, Top right, Bottom Left, Bottom Right
+				*/
+			}
+
+			#tabbed nav a.theChosenOne {
+				background-color: rgb(248,248,248);
+				color: #2C0F16;
+			}
+
+			#tabbed section {
+				right: 0px;
+				background-color: rgb(248,248,248);
+				padding: 25px;
+				margin-bottom:10px;
+				color: #000;
+				border-radius: 10px 10px 10px 10px;
+			}
+
+			#header {
+				margin: auto;
+			
+
+			}
+
+			#tab1 {
+				left:0px;
+				top: 0px;
+			}
+
+			h1 {
+				float:left;
+				margin:auto;
+				padding-left:50px;
+				padding-right:50px;
+				font-family:Helvetica;
+			}
+
+			h2 {
+				margin: auto;
+				padding: 200px;
+				padding-left:100px;
+			}
+
+			h3 { 
+				font-family: sans-serif;
+			}
+
+			.nav1 {
+				margin: auto;
+				padding-left: 250px;
+				width:200px;
+			}
+
+			
+
+			/* GALLERY */
+
+			#gallery {
+			overflow: auto;
+			padding: 0px 0px 0px 0px;
+			margin:auto;
+
+			}
+
+			#gallery div {
+				width: 280px;
+				height: 280px;
+
+				border-radius: 50%;
+				margin: 10px;
+
+				overflow: hidden;
+				float: left;
+
+
+			}
+
+			#gallery div img {
+				width: 100%;
+				height:100%;
+				margin: auto;
+
+
+			}
+
+			#dark {
+				display: none;
+				background-color: rgba(0,0,0,.8);
+
+				position: fixed;
+				top: 0px;
+				bottom: 0px;
+				right: 0px;
+				left: 0px;
+
+				z-index: 1000;
+			}
+
+			#dark #light {
+				background-color: #fff;
+				width: 600px;
+				height: 340px;
+
+				position: fixed;
+				top: 0px;
+				bottom: 0px;
+				right: 0px;
+				left: 0px;
+
+				margin: auto;
+				padding: 10px;
+			}
+
+			#dark #light img {
+				width: 100%;
+				height: auto;
+			}
+
+			#dark #light .close {
+				position: absolute;
+				right: 0px;
+				top: 0px;
+
+				background-color: #fff;
+				font-size: 12px;
+				padding: 5px;
+
+				
+			}
+
+			/* SLIDE */
+
+		 #slide {
+		 	padding-top:25px;
+		 	width:910px;
+		 	height:350px;
+		 	margin:auto;
+		 	overflow: hidden; 
+		 	/* this hides anything outside of #slide */
+		 }
+
+		 #slide img {
+		 	display:block;
+		 }
+
+
+
+
+		</style>
+	</head>
+	<body>
+
+		<div id="tabbed">
+			<nav>
+				<a href="#tab1" class="theChosenOne">About</a>
+				<a href="#tab2">Guide</a>
+				<a href="#tab3">Demo</a>
+			</nav>
+
+		<section id="tab1">
+		<h3><center>So, You're Looking for a NEW way to get organized?</h3></center>
+		<h2>
+		<img src="images/slide/about.pg">
+
+		</h2>
+
+
+		</section>
+
+
+
+
+		<section id="tab3">
+
+		<div style="background-color:#eee2c7; color:white; padding:50px;"><br><br></div>
+		<div style="background-color:#9acada; color:white; padding:50px;"><br><br></div>
+		<div style="background-color:#eee2c7; color:white; padding:50px;"><br><br></div>
+		<div style="background-color:#9acada; color:white; padding:50px;"><br><br></div>
+
+
+
+
+		</section>
+
+
+
+
+		<section id="tab2">
+			<h3><center>A Quick Run Down</h3></center>
+			<br><br><br>
+			<div id="gallery">
+				<div><img src="images/juice.pg" ></div>
+				<div><img src="images/sheep.pg" ></div>
+				<div><img src="images/donut.jg" ></div>
+			</div>
+			<br>
+			<br>
+			<br>
+
+			<div id="slide">
+			<img src="images/slide/sb4.pg" width="910px" height="350px">
+			<img src="images/slide/sb1.pg" width="910px" height="350px">
+			<img src="images/slide/sb2.pg" width="910px" height="350px">
+			<img src="images/slide/sb3.pg" width="910px" height="350px">
+
+			</div>
+
+			<div id="dark">
+				<div id="light">
+					<div class="close">X</div>
+					<img src="_img/01-lightbox.jpg" height="360" width="640">
+				</div>
+			</div>
+
+		</div>
+
+			</section>
+
+
+
+
+
+
+
+		</div> 
+		<!-- This ends the #tabbed div -->
+
+		<script type="text/javascript" src="_js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript">
+		//manage default view
+			$('#tabbed section').hide(); //hide all of them
+			$('#tabbed section:eq(0)').show(); //only show the first one // arrays start with zero
+
+			function tab_link_click(event) {
+				// kill the link, we will take it from here
+				event.preventDefault(); 
+
+				// change choosen oneclass
+				$('#tabbed nav a').removeClass('theChosenOne'); //remove class from all of them
+				$(this).addClass('theChosenOne'); //add it to the one we just clicked
+
+				// show and hide appropriate sections
+				$('#tabbed section').hide(); // hide all of them
+
+				var theHref = $(this).attr('href');
+				$(theHref).show(); //show section based on ID in href of our link
+
+
+				console.log('you got me.');
+
+			}
+
+			$('#tabbed nav a').click(tab_link_click);
+
+
+			/* N A V 
+
+				$('#tabbed nav a').animate({'opacity':'0'}, 0);
+		
+					function fade_over() {
+						$(this).find('#tabbed nav a').animate({'opacity': '1'}, 200)
+
+					}
+					$('#tabbed nav a').mouseover(fade_over) 
+		
+		
+					function fade_out() {
+						$(this).find('#tabbed nav a').stop(true).animate({'opacity': '0'}, 100)
+
+					}
+					$('#tabbed nav a').mouseout(fade_out);
+
+			*/
+
+			/* LIGHTBOX */
+
+					function light_on() {
+			//change the lightbox image
+			var whichImg = $(this).find('img').attr('src');
+			$('#dark #light img').attr('src',whichImg);
+			//manage the new dimensions
+			var tempImg = new Image();
+			tempImg.src = whichImg;
+			$(tempImg).load(function(){
+				var og_width = tempImg.width;
+				var og_height = tempImg.height;
+				var new_height = (og_height/og_width)*600;
+				//console.log(new_height);
+				$('#dark #light').height(new_height);
+			});
+			// shows the lightbox
+			$('#dark').show();
+		}
+		function light_off() {
+			$('#dark').hide();
+		}
+		$('#gallery div').click(light_on);
+		$('#dark #light .close').click(light_off);
+			$('#dark').click(light_off);
+
+		/* SLIDESHOW */
+		function slide_slide() {
+			$('#slide img:first').delay(2000).animate({'margin-top':'-350px'}, 1000, whenDone);
+
+			function whenDone() {
+				$('#slide img:first').appendTo('#slide').css({'margin-top':'0px'});
+				slide_slide() //keep the party going
+			}
+		}
+
+		slide_slide(); //start the party
+
+
+		/* LIGHT BOX HOVER */
+				$('#gallery img').animate({'opacity': '.3'}, 0);
+		
+					function fade_over() {
+						$(this).animate({'opacity': '1'}, 500)
+
+
+					}
+					$('#gallery img').mouseover(fade_over) 
+		
+		
+					function fade_out() {
+						$(this).stop(true).animate({'opacity': '.5'}, 300)
+
+					}
+					$('#gallery img').mouseout(fade_out) 
+
+		/* NAV */
+		
+					function fade_over1() {
+						$("#tabbed nav a").not(this).animate({'opacity': '.3'}, 500)
+
+
+					}
+					$('#tabbed nav a').mouseover(fade_over1) 
+		
+		
+					function fade_out1() {
+						$("#tabbed nav a").not(this).stop(true).animate({'opacity': '1'}, 300)
+
+					}
+					$('#tabbed nav a').mouseout(fade_out1) 
+
+
+		/* SWAP */
+
+			function swap_over() {
+					var theRel = $(this).attr('rel');
+
+					console.log(theRel);
+					$('#swap .larger img').attr('src',theRel)
+				}
+
+			// call the function with an event listener
+			$('#swap .gallery img').mouseover(swap_over);
+
+
+		</script>
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
