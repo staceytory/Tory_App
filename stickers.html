@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="viewport" content="initial-scale=1.0">
+		<link href="css/lightbox.css" rel="stylesheet" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<title>Testing</title>
 		<style type="text/css">
 body {
@@ -14,49 +15,15 @@ body {
 				background-color: ;
 				
 									
-				width: 414px;
-				height: 736px;
-				padding: 10px;
+				width: 320px;
+				height: 480px;
 				margin: auto;
-			}
-
-			#tabbed nav {
-				margin: auto;
-				padding-left: 0px;
-			}
-			#tabbed nav a {
-				margin: auto;
-				display: inline-block;
-				background-color: #9fb2ac;
-				width: 104px;
-				height: 50px;
-				
-				text-align: center;
-				line-height: 50px;
-
-				text-decoration: none;
-				text-transform: uppercase;
-
-				color: #eee;
-
-				font-family: Helvetica, Arial;
-				border-radius: 10px 10px 0px 0px;
-				/*border-radius: 10px 10px 0px 0px; */
-				/*
-				 Top left, Top right, Bottom Left, Bottom Right
-				*/
-			}
-
-			#tabbed nav a.theChosenOne {
-				background-color: rgb(248,248,248);
-				color: #2C0F16;
 			}
 
 			#tabbed section {
 				right: 0px;
 				background-color: rgb(248,248,248);
 				padding: 25px;
-				margin-bottom:10px;
 				color: #000;
 				border-radius: 10px 10px 10px 10px;
 				height: 736px;
@@ -96,17 +63,6 @@ body {
 			   padding: 0; 
 			   list-style: none; 
 			}
-
-			nav {
-				padding: 15px;
-				background-color: gray;
-				color: white;
-
-			}
-
-			.nav_bar {
-				padding-top: 15px;
-			}
 			
 
 			/* GALLERY */
@@ -119,11 +75,7 @@ body {
 			}
 
 			#gallery div {
-				width: 280px;
-				height: 280px;
-
-				border-radius: 50%;
-				margin: 10px;
+				width:250px;
 
 				overflow: hidden;
 				float: left;
@@ -185,11 +137,60 @@ body {
 			}
 
 
+			.cat {
+				padding-bottom: 100px;
+				position: relative;
+			}
+
+			.cat img { 
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
 
 
+			.bird {
+				position: relative;
+			}
 
+			.bird img { 
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
 
+		nav ul ul {
+			display: none;
+		}
+		
+			nav ul li:hover > ul {
+				display: block;
+			}
 
+		nav ul {
+		
+			font-family: quicksand, Helvetica;
+			padding: 0 20px;  
+			list-style: none;
+			position: relative;
+			display: inline-table;
+		}
+
+		a {
+   			outline: 0;
+		}
+
+		a:visited {
+  			  color: #c7dfd8;
+		}
+
+		footer {
+			font-family: quicksand, Helvetica;
+		}
+
+		.menu2{
+		   opacity: 0.5;
+		}
 
 
 
@@ -204,44 +205,61 @@ body {
 
 		<div id="tabbed">
 		<section id="tab2">
-		<nav> 
-			back
+
+		<nav class="nav_bar">
+			<ul>
+				<li>&#9776;
+					<ul>
+						<li><a href="index.html">Camera</a></li>
+						<li><a href="#!">Gallery</a></li>
+						<li><a href="shop.html">Shop</a></li>
+					</ul>
+				</li>
+			</ul>
 		</nav>
 
 
-	<div class="nav_bar"><center>
- 	 <a href=#>
-    <img src="images/sticknav/dog.png" width=70% height=70% >
-  </a>
+<center>
+
+
+		<section id="tab1">
+			<p>
+				<div id="gallery">
+
+				<div><img src="images/sticknav/bagu/bag_light.png" width="364px" height='238px'></div>
+
+			</div>
+			</p>
+
+
+ 			<div class="cat">
+				<img src="images/sticknav/cat.png" width="100%" >
+				<img class="soon" src="images/sticknav/soon.png" width="100%" >
+
+			</div>
+  
+  <br>
+  <br>
   <br>
 
-  <a href=#>
-    <img src="../assets/img/images/fi-bookmark.svg" >
-    <label>cats</label>
-  </a>
-  <br>
+  			<div class="bird">
+				<img src="images/sticknav/bird.png" width="100%">
+				<img class="soon" src="images/sticknav/soon.png" width="100%">
 
-  <a href=#>
-    <img src="../assets/img/images/fi-info.svg" >
-    <label>burds</label>
-  </a>
-  <br>
-
-  <a href=#>
-    <img src="../assets/img/images/fi-mail.svg" >
-    <label>fish</label>
-  </a><br>
-
-  <a href=#>
-    <img src="../assets/img/images/fi-like.svg" >
-    <label>coming soon</label>
-  </a>
+			</div>
 
  </center>
-</div>
 
 
+			<div id="dark">
+				<div id="light">
+					<div class="close">X</div>
+					<img src="images/sticknav/bagu/bag_light.png" width="364px" height='238px'>
+				</div>
+			</div>
 
+
+	</div>
 		</div>
 		</center>
 		</section>
@@ -257,7 +275,76 @@ body {
 
 
 	<script type="text/javascript" src="_js/jquery-1.11.0.min.js"></script>
+	<script src="js/lightbox.min.js"></script>
 	<script type="text/javascript">
+
+			$('.cat img.soon').animate({'opacity':'0'}, 0); 
+			//initial page load
+
+			// mouseover
+			function fade_over() {
+				$(this).find('.soon').stop(true).animate({'opacity':'1'}, 200);
+			}
+			$('.cat').mouseover(fade_over);
+
+			// mouseout
+			function fade_out() {
+				$(this).find('.soon').stop(true).animate({'opacity':'0'}, 200); 
+			}
+			$('.cat').mouseout(fade_out);
+
+			$('.bird img.soon').animate({'opacity':'0'}, 0); 
+			//initial page load
+
+			// mouseover
+			function fade_over() {
+				$(this).find('.soon').stop(true).animate({'opacity':'1'}, 200);
+			}
+			$('.bird').mouseover(fade_over);
+
+			// mouseout
+			function fade_out() {
+				$(this).find('.soon').stop(true).animate({'opacity':'0'}, 200); 
+			}
+			$('.bird').mouseout(fade_out);
+
+
+			function light_on() {
+				//change the lightbox image
+				var whichImg = $(this).find('img').attr('src');
+				$('#dark #light img').attr('src',whichImg);
+
+				//manage the new dimensions
+				var tempImg = new Image();
+				tempImg.src = whichImg;
+
+				$(tempImg).load(function(){
+
+					var og_width = tempImg.width;
+					var og_height = tempImg.height;
+
+					var new_height = (og_height/og_width)*600;
+
+					//console.log(new_height);
+
+
+
+					$('#dark #light').height(new_height);
+
+
+				});
+
+				// shows the lightbox
+				$('#dark').show();
+			}
+
+			function light_off() {
+				$('#dark').hide();
+			}
+
+			$('#gallery div').click(light_on);
+			$('#dark #light .close').click(light_off);
+			$('#dark').click(light_off);
 
 
 

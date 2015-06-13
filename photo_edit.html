@@ -4,6 +4,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<title>Testing</title>
 		<style type="text/css">
+		<link rel="stylesheet" type="text/css" href="_css/challenge.css">
 
 
 
@@ -66,11 +67,6 @@
 
 
 
-		 .bodytest {
-		 	background: black;
-		 }
-
-
 
 		nav ul ul {
 			display: none;
@@ -121,9 +117,9 @@
 			<ul>
 				<li>&#9776;
 					<ul>
-						<li><a href="index.html">Camera</a></li>
+						<li><a href="#!">Camera</a></li>
 						<li><a href="#!">Gallery</a></li>
-						<li><a href="shop.html">Shop</a></li>
+						<li><a href="#!">Shop</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -132,6 +128,18 @@
 
 
 
+			<section class="bottom">
+					<h1>The Bottom Drawer</h1>
+					<p class="text3">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+					<div class="button" data-prop="bottom" data-hidden="-345px" data-visible="0px">BOTTOM</div>
+				</section>
 
 
 
@@ -141,80 +149,10 @@
 
 
 
-
-
-
-			<center>
-
-			<a href="photo.html">
-			<img class="camera" src="images/icon/camera.png" height="275px" width="275px"; padding-bottom="50px">
-		</a>
-			<br>
-		<p class="menu2">
-			<img src="images/icon/library.png" height="90px" width="90px"; padding="50px">
-			<a href="stickers.html">
-			<img src="images/icon/sticker.png" height="90px" width="90px"; padding="50px"></a>
-			<a href="shop.html">
-				<img src="images/icon/shop.png" height="90px" width="90px"; padding="50px">
-		</p>
 
 		<footer>
  		 <p>OJS!</p>
 		</footer>
-
-		</center>
-		</section>
-
-
-
-
-		<section id="tab3">
-
-		<div style="background-color:#eee2c7; color:white; padding:50px;"><br><br></div>
-		<div style="background-color:#9acada; color:white; padding:50px;"><br><br></div>
-		<div style="background-color:#eee2c7; color:white; padding:50px;"><br><br></div>
-		<div style="background-color:#9acada; color:white; padding:50px;"><br><br></div>
-
-
-
-
-		</section>
-
-
-
-
-		<section id="tab2">
-			<h3><center>A Quick Run Down</h3></center>
-			<br><br><br>
-			<div id="gallery">
-				<div><img src="images/juice.pg" ></div>
-				<div><img src="images/sheep.pg" ></div>
-				<div><img src="images/donut.jg" ></div>
-			</div>
-			<br>
-			<br>
-			<br>
-
-			<div id="slide">
-			<img src="images/slide/sb4.pg" width="910px" height="350px">
-			<img src="images/slide/sb1.pg" width="910px" height="350px">
-			<img src="images/slide/sb2.pg" width="910px" height="350px">
-			<img src="images/slide/sb3.pg" width="910px" height="350px">
-
-			</div>
-
-			<div id="dark">
-				<div id="light">
-					<div class="close">X</div>
-					<img src="_img/01-lightbox.jpg" height="360" width="640">
-				</div>
-			</div>
-
-		</div>
-
-			</section>
-
-
 
 
 
@@ -222,7 +160,7 @@
 
 		</div> 
 		<!-- This ends the #tabbed div -->
-		<script src="phonegap.js"></script>
+
 		<script type="text/javascript" src="_js/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript">
 		//manage default view
@@ -252,28 +190,29 @@
 
 
 
+		var bottom_state = 'Off';
 
-			/* CAMERA */
-			$(document).bind('deviceready', function() {
-
-				$(".camera").bind('touchstart', function(){
-					navigator.camera.getPicture( function (data){
-						$('.capture')
-							.attr( 'src', 'data:image/jpeg;base64,' + data)
-							.css ('visibility', 'visible');
-					}, function (error){
-						console.log('error');
-					}, {
+				function bottom_click() {
+					if (bottom_state == 'Off')
+					{
+						bottom_state = 'On';
+						$(this).animate({'bottom':'0px'},1000);
+						$('.text3').animate({'opacity':'1'}, 2000);
 						
-					})
-				})
-			})
+					}
+					else
+					{
+						bottom_state = 'Off'
+						$(this).animate({'bottom':'-345px'},1000);
+						$('.text3').animate({'opacity':'0'}, 500);
+						
+						
+					}
+				}
+			
+		$('.bottom').click(bottom_click);
 
 
-        
-
-
-        
 		</script>
 
 	</body>

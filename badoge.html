@@ -145,17 +145,15 @@
 
 
 			<center>
-
 			<a href="photo.html">
-			<img class="camera" src="images/icon/camera.png" height="275px" width="275px"; padding-bottom="50px">
+			<img src="images/icon/camera.png" height="275px" width="275px"; padding-bottom="50px">
 		</a>
 			<br>
 		<p class="menu2">
 			<img src="images/icon/library.png" height="90px" width="90px"; padding="50px">
 			<a href="stickers.html">
 			<img src="images/icon/sticker.png" height="90px" width="90px"; padding="50px"></a>
-			<a href="shop.html">
-				<img src="images/icon/shop.png" height="90px" width="90px"; padding="50px">
+			<img src="images/icon/shop.png" height="90px" width="90px"; padding="50px">
 		</p>
 
 		<footer>
@@ -222,7 +220,7 @@
 
 		</div> 
 		<!-- This ends the #tabbed div -->
-		<script src="phonegap.js"></script>
+
 		<script type="text/javascript" src="_js/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript">
 		//manage default view
@@ -251,27 +249,117 @@
 			$('#tabbed nav a').click(tab_link_click);
 
 
+			/* N A V 
+
+				$('#tabbed nav a').animate({'opacity':'0'}, 0);
+		
+					function fade_over() {
+						$(this).find('#tabbed nav a').animate({'opacity': '1'}, 200)
+
+					}
+					$('#tabbed nav a').mouseover(fade_over) 
+		
+		
+					function fade_out() {
+						$(this).find('#tabbed nav a').stop(true).animate({'opacity': '0'}, 100)
+
+					}
+					$('#tabbed nav a').mouseout(fade_out);
+
+			*/
+
+			/* LIGHTBOX */
+
+					function light_on() {
+			//change the lightbox image
+			var whichImg = $(this).find('img').attr('src');
+			$('#dark #light img').attr('src',whichImg);
+			//manage the new dimensions
+			var tempImg = new Image();
+			tempImg.src = whichImg;
+			$(tempImg).load(function(){
+				var og_width = tempImg.width;
+				var og_height = tempImg.height;
+				var new_height = (og_height/og_width)*600;
+				//console.log(new_height);
+				$('#dark #light').height(new_height);
+			});
+			// shows the lightbox
+			$('#dark').show();
+		}
+		function light_off() {
+			$('#dark').hide();
+		}
+		$('#gallery div').click(light_on);
+		$('#dark #light .close').click(light_off);
+			$('#dark').click(light_off);
+
+		/* SLIDESHOW */
+		function slide_slide() {
+			$('#slide img:first').delay(2000).animate({'margin-top':'-350px'}, 1000, whenDone);
+
+			function whenDone() {
+				$('#slide img:first').appendTo('#slide').css({'margin-top':'0px'});
+				slide_slide() //keep the party going
+			}
+		}
+
+		slide_slide(); //start the party
 
 
-			/* CAMERA */
-			$(document).bind('deviceready', function() {
+		/* LIGHT BOX HOVER */
+				$('#gallery img').animate({'opacity': '.3'}, 0);
+		
+					function fade_over() {
+						$(this).animate({'opacity': '1'}, 500)
 
-				$(".camera").bind('touchstart', function(){
-					navigator.camera.getPicture( function (data){
-						$('.capture')
-							.attr( 'src', 'data:image/jpeg;base64,' + data)
-							.css ('visibility', 'visible');
-					}, function (error){
-						console.log('error');
-					}, {
-						
-					})
-				})
-			})
 
+					}
+					$('#gallery img').mouseover(fade_over) 
+		
+		
+					function fade_out() {
+						$(this).stop(true).animate({'opacity': '.5'}, 300)
+
+					}
+					$('#gallery img').mouseout(fade_out) 
+
+		/* NAV */
+					/*
+					function fade_over1() {
+						$("#tabbed nav a").not(this).animate({'opacity': '.3'}, 500)
+
+
+					}
+					$('#tabbed nav a').mouseover(fade_over1) 
+		
+		
+					function fade_out1() {
+						$("#tabbed nav a").not(this).stop(true).animate({'opacity': '1'}, 300)
+
+					}
+					$('#tabbed nav a').mouseout(fade_out1) 
+					*/
+
+		/* SWAP */
+
+			function swap_over() {
+					var theRel = $(this).attr('rel');
+
+					console.log(theRel);
+					$('#swap .larger img').attr('src',theRel)
+				}
+
+			// call the function with an event listener
+			$('#swap .gallery img').mouseover(swap_over);
+
+			$(".menu2 img").hover(function(){
+			   $(this).stop().animate({"opacity": "2"}); 
+			}, function(){
+			   $(this).stop().animate({"opacity": "0.5"});
+			});
 
         
-
 
         
 		</script>
