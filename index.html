@@ -263,12 +263,35 @@
 							.css ('visibility', 'visible');
 					}, function (error){
 						console.log('error');
-					}, {
-						
+					}, 
+					{ quality : 75,
+ 					destinationType : Camera.DestinationType.DATA_URL,
+ 					sourceType : Camera.PictureSourceType.CAMERA,
+ 					allowEdit : true,
+ 					encodingType: Camera.EncodingType.JPEG,
+ 					targetWidth: 100,
+ 					targetHeight: 100,
+ 					popoverOptions: CameraPopoverOptions,
+ 					saveToPhotoAlbum: false };
+
 					})
 				})
 			})
 
+
+
+
+			navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+			    destinationType: Camera.DestinationType.FILE_URI });
+			
+			function onSuccess(imageURI) {
+			    var image = document.getElementById('myImage');
+			    image.src = imageURI;
+			}
+			
+			function onFail(message) {
+			    alert('Failed because: ' + message);
+			}
 
         
 
