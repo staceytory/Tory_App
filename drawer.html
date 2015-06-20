@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+    <head>
+        <title>jQuery navigation drawer</title>
+         
+        <!-- jquery ui -->
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" />
+ 
+        <style>
+        body{
+            padding:0;
+            margin:0;
+            font-family: verdana;
+        }
+         
+        #action-bar{
+            padding:1em;
+            border-bottom:0.2em solid #999;
+        }
+         
+        #main-contents{
+            padding:1em;
+            position:relative;
+        }
+         
+        #navigation-drawer{
+            border:thin solid #000;
+            color:#fff;
+            padding:1em;
+            position:absolute;
+            top:0;
+            left:0;
+            height:100%;
+            background-color:#000;
+            display:none;
+            z-index:999;
+        }
+         
+        #hide-drawer{
+            display:none;
+            cursor:pointer;
+        }
+         
+        #show-drawer{
+            cursor:pointer;
+        }
+        </style>
+         
+         
+    </head>
+<body>
+ 
+<div id='page-container'>
+ 
+    <div id='action-bar'>
+        <div id='show-drawer'>Show</div>
+        <div id='hide-drawer'>Hide</div>
+    </div>
+ 
+    <div id='main-contents'>
+     
+        <div id='navigation-drawer'>
+            Drawer contents here.
+        </div>
+         
+        <div id='text-content'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia non neque et ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur blandit sapien nec iaculis consequat. Nam semper, eros eu tempor bibendum, metus velit scelerisque lorem, non venenatis sem justo non nunc. Cras nec purus eget eros elementum aliquet quis lacinia tortor. Nunc dignissim, purus in gravida tincidunt, quam arcu sodales nisl, nec sollicitudin eros purus vel dui. Etiam erat nunc, faucibus eu pellentesque sed, congue suscipit enim.
+            <br /><br />
+            Cras sit amet nibh et ante pellentesque malesuada accumsan at turpis. Aliquam ac tellus auctor, sagittis purus eget, venenatis risus. Aenean eget nisl facilisis, tristique est in, fringilla tortor. Pellentesque faucibus aliquam risus. Vestibulum quis vestibulum lectus, sed laoreet nulla. In feugiat, augue at faucibus cursus, metus ligula gravida metus, a condimentum dolor odio vel libero. Curabitur ut viverra orci, eget molestie sem. Aliquam erat volutpat.
+            <br /><br />
+            Praesent eu viverra sem. Morbi mollis consectetur elit eget pulvinar. Nam nunc nulla, tempus quis sapien id, mattis venenatis purus. Curabitur tortor nulla, vulputate non felis at, vulputate fermentum augue. Sed condimentum egestas metus, non luctus odio consectetur in. Quisque dignissim metus neque, non consequat ligula faucibus id. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam varius lacus mi, vel facilisis eros adipiscing ac. Aenean vulputate eros ut sollicitudin lobortis. Vestibulum euismod sollicitudin felis, a ultrices nisi euismod at.
+            <br /><br />
+            Aliquam hendrerit erat nulla, ut ornare lacus pretium eget. Donec cursus, lectus sed posuere accumsan, metus augue rutrum ligula, a accumsan ipsum turpis suscipit nisl. Morbi id enim sed nisl ornare porttitor. Donec facilisis, nibh eget rhoncus molestie, metus justo rutrum mauris, at mattis quam neque vitae odio. Praesent in nunc ipsum. Cras vulputate lacus sit amet augue cursus viverra. Integer tempor scelerisque lacus, et luctus nunc mollis eget.
+            <br /><br />
+            Aliquam enim diam, suscipit a metus quis, imperdiet vehicula velit. Pellentesque orci augue, elementum eget eros ut, egestas dictum nunc. Proin vehicula tincidunt velit, eu consequat nunc euismod in. Mauris sit amet ullamcorper sem. Ut et turpis fringilla, volutpat metus quis, rutrum nunc. Ut nisi augue, sagittis eu accumsan adipiscing, blandit at nibh. Vivamus cursus a diam sed pharetra. Nam sed ante iaculis, dictum ipsum id, vulputate purus.
+        </div>
+         
+    </div>
+     
+</div>
+ 
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+ 
+<!-- jquery ui -->
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+ 
+<script>
+$(document).ready(function(){
+     
+    // so our #navigation-drawer will cover up to the page foot
+    $('#main-contents').height($(document).height());
+     
+    // show the navigation drawer
+    $('#show-drawer').click(function(){
+ 
+        $('#text-content').fadeTo('slow', 0.33 );
+        $('#navigation-drawer').show('slide', { direction: 'left' }, 300);
+         
+        $(this).hide();
+        $('#hide-drawer').show();
+             
+    });
+     
+    // hide the navigation drawer
+    $('#hide-drawer').click(function(){
+ 
+        $('#text-content').fadeTo('slow', 1 );
+        $('#navigation-drawer').hide('slide', { direction: 'left' }, 300);
+         
+        $(this).hide();
+        $('#show-drawer').show();
+             
+    });
+     
+});
+</script>
+ 
+</body>
+</html>

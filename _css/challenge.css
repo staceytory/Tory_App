@@ -1,25 +1,25 @@
 #theGoods {
 	border:solid 10px #AFAFAF;
-	margin:15px auto;
-	background-color: #1E2B31;
+	margin: auto;
 	overflow:hidden;
 	position:relative;
-	min-height:600px;
-	width: 1165px;
+				width: 320px;
+				height: 480px;
+	overflow-x:scroll;
+	border-radius: 10px 10px 10px 10px;
 }
 #theGoods section {
-	width:200px;
+				width: 270px;
+				height: 150px;
 	border:solid 10px #DDB95B;
 	padding:15px;
-	background-color: #C79549;
+	overflow-x:scroll;
 	position: absolute;
+		overflow:hidden;
 }
 
-#theGoods section.top 		{ left: 	315px; 		top: 		-345px; 	}
-#theGoods section.bottom 	{ right: 	315px; 		bottom: 	-345px; }
-#theGoods section.right 	{ right: 	-250px; 	top: 	120px; 	}
+#theGoods section.bottom 	{		bottom: 	-150px; }
 
-#theGoods section.left 		{ left: 	-250px; 	top: 	120px; 	}
 
 
 #theGoods section h1 {
@@ -33,6 +33,10 @@
 	line-height:100%;
 	text-align:justify;
 	color:#353538;
+}
+
+#theGoods section img {
+padding-left: 15px;
 }
 
 #theGoods section .button {
@@ -51,33 +55,9 @@
 	background-color: #EEAC03;
 }
 
-#theGoods section.top .button {
-	position: absolute;
-	left: -10px;
-	bottom: -35px;
-}
+
 #theGoods section.bottom .button {
 	position: absolute;
 	left: -10px;
 	top: -35px;
-}
-#theGoods section.right .button {
-	position: absolute;
-	left: -195px;
-	top: 150px;
-	width: 345px;
-
-	transform:rotate(-90deg);
-	-ms-transform:rotate(-90deg); /* IE 9 */
-	-webkit-transform:rotate(-90deg); /* Safari and Chrome */
-}
-#theGoods section.left .button {
-	position: absolute;
-	right: -195px;
-	top: 150px;
-	width: 345px;
-
-	transform:rotate(90deg);
-	-ms-transform:rotate(90deg); /* IE 9 */
-	-webkit-transform:rotate(90deg); /* Safari and Chrome */
 }

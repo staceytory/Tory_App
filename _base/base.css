@@ -1,0 +1,76 @@
+@import url(icomoon/style.css);
+body { 
+	font-family: Helvetica, sans-serif; 
+	margin-left: 35px;
+}
+.instructions {
+	z-index: 9000;
+
+	position: fixed;
+	left: 0px; top: 0px; bottom: 0px;
+
+	width: 35px;
+
+	background-color: rgba(0,0,0,.8);
+
+	overflow: hidden;
+	/*padding:50px;*/
+	color: #fff;
+
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+.instructions.open { width: 100%; }
+
+.instructions *, .instructions * { box-sizing: border-box;  -webkit-box-sizing: border-box;  -moz-box-sizing: border-box; }
+.instructions .icon-cancel-circle {
+	position: absolute; left: 5px; top: 5px;  
+	font-size: 22px; 
+	transform:rotate(45deg);
+	-ms-transform:rotate(45deg); /* IE 9 */
+	-webkit-transform:rotate(45deg); /* Opera, Chrome, and Safari */
+
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+.instructions.open .icon-cancel-circle {
+	font-size: 30px; 
+	transform:rotate(0deg);
+	-ms-transform:rotate(0deg); /* IE 9 */
+	-webkit-transform:rotate(0deg); /* Opera, Chrome, and Safari */
+}
+.instructions .nest { 
+
+	background-color: rgba(0,0,0,.6);
+	min-width: 600px; 
+
+	width: 90%;
+	height: 90%;
+	position: absolute;
+	right: 0px; left: 0px; top: 0px; bottom: 0px;
+	margin: auto;
+
+	border: solid 1px #666;
+	padding: 25px;
+
+	overflow: auto;
+
+	opacity: 0;
+
+	-webkit-transition: all .5s;
+	transition: all .5s;
+
+}
+.instructions.open .nest { 
+	opacity: 1;
+}
+h1, h2, h3 { margin-top: 0px;  }
+.instructions img.goal { display: block; margin:25px auto; border: solid 10px #666; height: 70%; width: auto; }
+.instructions a { color:#ffbb5f; } .instructions a:hover { color:#ff4951; } 
+
+.solution {
+	margin:50px;
+	padding:50px;
+	background-color: #eee;
+	color: #333;
+}

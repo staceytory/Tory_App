@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Editing</title>
+		<link rel="stylesheet" type="text/css" href="_base/base.css">
+		<link rel="stylesheet" type="text/css" href="_css/challenge.css">
+				<style type="text/css">
+
+
+			
+
+		nav ul ul {
+			display: none;
+		}
+		
+			nav ul li:hover > ul {
+				display: block;
+			}
+
+		nav ul {
+		
+			font-family: quicksand, Helvetica;
+			padding: 0 20px;  
+			list-style: none;
+			position: relative;
+			display: inline-table;
+		}
+
+		a {
+   			outline: 0;
+		}
+
+		a:visited {
+  			  color: #c7dfd8;
+		}
+
+		footer {
+			font-family: quicksand, Helvetica;
+		}
+
+		.menu2{
+		   opacity: 0.5;
+		}
+
+		</style>
+	</head>
+	<body>
+
+
+
+			<div id="theGoods">
+								<nav class="nav_bar">
+			<ul>
+				<li>&#9776;
+					<ul>
+						<li><a href="index.html">Camera</a></li>
+						<li><a href="#!">Gallery</a></li>
+						<li><a href="shop.html">Shop</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+
+
+
+				<section class="bottom" style="overflow-y:hidden;overflow-x:scroll;">
+					<h1>Baguette Stickies</h1>
+					<p class="text3" style= "width:400%;">
+						<img src="images/sticknav/bagu/b1.png">
+						<img style="float:left" src="images/sticknav/bagu/b2.png">
+						<img style="float:left" src="images/sticknav/bagu/b3.png">
+						<img style="float:left" src="images/sticknav/bagu/b4.png">
+						<img style="float:left" src="images/sticknav/bagu/b5.png">
+						<img style="float:left" src="images/sticknav/bagu/b6.png">
+						<img style="float:left" src="images/sticknav/bagu/b7.png">
+
+
+
+
+					</p>
+					<div class="button" data-prop="bottom" data-hidden="-345px" data-visible="0px">BOTTOM</div>
+
+
+
+		<script type="text/javascript" src="_js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="_base/base.js"></script>
+		<script type="text/javascript" src="_js/challenge.js"></script>
+		<script type="text/javascript">
+
+		
+
+		var bottom_state = 'Off';
+
+				function bottom_click() {
+					if (bottom_state == 'Off')
+					{
+						bottom_state = 'On';
+						$(this).animate({'bottom':'0px'},1000);
+						$('.text3').animate({'opacity':'1'}, 2000);
+						
+					}
+					else
+					{
+						bottom_state = 'Off'
+						$(this).animate({'bottom':'-150px'},1000);
+						$('.text3').animate({'opacity':'0'}, 500);
+						
+						
+					}
+				}
+			
+		$('.bottom').click(bottom_click);
+
+
+
+	
+
+
+
+
+
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
